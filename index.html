@@ -12,47 +12,69 @@
     <title>Bookshelf App</title>
 </head>
 <body>
+    <a href="#maincontent" tabindex="0" class="skip-link">Skip to content</a>
     <header>
-        <h1>Bookshelf</h1>
-        <nav>
-            <ul>
-                <li><a href="#record">Record</a></li>
-                <li><a href="#search">Search</a></li>
-                <li><a href="#shelf">Shelf</a></li>
+        <!-- Nav Mobile -->
+        <nav class="menumobile">
+            <div aria-label="logo">Bookshelf</div>
+            <div class="iconmenu" id="menu"><a href="#" aria-label="hamburger button">☰</a></div>
+        </nav>
+        <nav id="drawer" class="navmobile">
+            <ul class="navlistmobile">
+                <li class="navitemmobile"><a href="#input">Input</a></li>
+                <li class="navitemmobile"><a href="#search">Search</a></li>
+                <li class="navitemmobile"><a href="#shelf">Shelf</a></li>
+            </ul>
+        </nav>
+
+        <!-- Nav Desktop -->
+        <nav class="nav">
+            <a class="logo" href="">Bookshelf</a>
+            <ul class="navlist">
+                <li class="navitem"><a href="#input">Input</a></li>
+                <li class="navitem"><a href="#search">Search</a></li>
+                <li class="navitem"><a href="#shelf">Shelf</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="maincontent">
         <section>
-            <h1>In a narrow world, there is the broad knowledge.</h1>
-            <a href="#record">Get Started</a>
+            <div class="hero" style="background-image:linear-gradient(rgba(0, 0, 2, .6), rgba(0, 0, 2, .6)), url('assets/images/sbooksnet.jpg');">
+                <div class="herotext">
+                    <h1>Bookshelf Apps</h1>
+                    <h1>In a narrow world, there is the broad knowledge.</h1>
+                    <a href="#record" class="started">Get Started</a>
+                </div>
+            </div>
         </section>
 
-        <section id="#record">
-            <h2>Record</h2>
-            <form id="recordBook">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title">
-                <label for="author">Author</label>
-                <input type="text" name="author" id="author">
-                <label for="year">Year</label>
-                <input type="text" name="year" id="year">
-                <label for="isComplete">Finished Reading</label>
-                <input type="checkbox">
+        <section class="record-section">
+            <div id="record" class="card">
+                <h2>Record</h2>
+                <form id="recordBook">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author">
+                    <label for="year">Year</label>
+                    <input type="text" name="year" id="year">
+                    <label for="isComplete">Finished Reading</label>
+                    <input type="checkbox">
 
-                <button>Submit</button>
-            </form>
-        </section>
+                    <button>Submit</button>
+                </form>
+            </div>
 
-        <section id="#search">
-            <h2>Search</h2>
-            <form id="searchBook">
-                <label for="search">Search</label>
-                <input type="text" name="search" id="search">
-                <button>Search</button>
-            </form>
-            <div id="searchResult"></div>
+            <div id="search" class="card">
+                <h2>Search</h2>
+                <form id="searchBook">
+                    <label for="search">Search</label>
+                    <input type="text" name="search" id="search">
+                    <button>Search</button>
+                </form>
+                <div id="searchResult"></div>
+            </div>
         </section>
 
         <section id="#shelf">
@@ -71,5 +93,7 @@
     <footer>
         <p>ini footer</p>
     </footer>
+
+    <script src="assets/js/menuMobile.js"></script>
 </body>
 </html>

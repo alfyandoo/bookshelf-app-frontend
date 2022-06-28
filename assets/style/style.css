@@ -1,8 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: brown;
+  color: white;
+  padding: 12px;
+  z-index: 100;
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.menumobile {
+  background-color: #00cc00;
+  width: 100%;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  justify-content: space-between;
+  padding: 14px 0 0 8px;
+}
+
+.navmobile {
+  background-color: #00cc00;
+  width: 100%;
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.navlistmobile {
+  width: 60%;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.navitemmobile {
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: right;
+  line-height: 24px;
+  color: white;
+}
+
+.navitemmobile a {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.iconmenu a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.navmobile a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+}
+
+.nav {
+  background-color: #00cc00;
+  width: 100%;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.navlist {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.navitem {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: right;
+  line-height: 24px;
+}
+
+.navitem a{
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.logo {
+  width: 20%;
+  box-sizing: border-box;
+  display: inline-block;
+  line-height: 24px;
+  text-align: left;
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1.3em;
+  color: white;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.hero {
+	display: flex;
+	align-items: center;
+	min-height: 380px;
+	width: 100%;
+	text-align: center;
+	background-position: center;
+}
+
+.herotext {
+	margin: 0 auto;
+	max-width: 600px
+}
+
+.hero h1 {
+	color: #fff;
+	font-weight: 600;
+	font-size: 36px;
+	text-shadow: 1px 1px #00cc00;
+}
+
+.hero h2 {
+	color: #fff;
+	margin-top: 16px;
+	font-size: 18px;
+	font-weight: 400;
+	text-shadow: 1px 1px #141414
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+main {
+  width: 100%;
+  margin: auto;
+}
+
+.content {
+  padding: 30px;
+}
+
+.started {
+  margin-top: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size:1.3em;
+  text-align: center;
+  color: #00cc00;
+  background-color: #f5f5f5;
+}
+
+.started:hover {
+  background-color: #232323;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.record-section {
+  padding: 20px;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 footer {
-    bottom: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 499px) {
+  .nav {
+    display: none;
+  }
+
+  .navmobile {
+    background-color: #00cc00;
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+    transition: transform 0.2s ease;
+  }
+
+  .open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .navitemmobile {
+    display: list-item;
+    text-align: left;
+    color: #00cc00;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .menumobile {
+      display: none
+  }
+  
+  .navmobile {
+      display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+      width: 30%;
+  }
+
+  .navlist {
+      width: 70%;
+  }
+
+  .list {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    max-width: 2400px;
+  }
 }

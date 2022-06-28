@@ -188,6 +188,7 @@ main {
   text-decoration: none;
   padding: 5px 10px;
   font-size:1.3em;
+  font-weight: 600;
   text-align: center;
   color: #00cc00;
   background-color: #f5f5f5;
@@ -197,7 +198,23 @@ main {
   background-color: #232323;
 }
 
+form {
+  display: grid;
+  grid-template-colums: 20px 1fr;
+  grid-gap: 16px;
+}
+
+label {
+  grid-column: 1 / 2;
+}
+
+input,
+button {
+  grid-column: 2 / 3;
+}
+
 .card {
+  padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   width: 100%;

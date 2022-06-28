@@ -51,33 +51,33 @@
 
         <section class="record-section">
             <div id="record" class="card">
-                <h2>Record</h2>
+                <h2>Record Book</h2>
                 <form id="recordBook">
                     <label for="title">Title</label>
-                    <input type="text" name="title" id="title">
+                    <input id="title" type="text" name="title" id="title">
                     <label for="author">Author</label>
-                    <input type="text" name="author" id="author">
+                    <input id="author" type="text" name="author" id="author">
                     <label for="year">Year</label>
-                    <input type="text" name="year" id="year">
+                    <input id="year" type="text" name="year" id="year">
                     <label for="isComplete">Finished Reading</label>
-                    <input type="checkbox">
+                    <input id="isComplete" type="checkbox">
 
-                    <button>Submit</button>
+                    <button id="submit">Submit</button>
                 </form>
             </div>
 
             <div id="search" class="card">
                 <h2>Search</h2>
                 <form id="searchBook">
-                    <label for="search">Search</label>
-                    <input type="text" name="search" id="search">
-                    <button>Search</button>
+                    <label for="searchByTitle">Search</label>
+                    <input id="searchByTitle" type="text" name="search" id="search">
+                    <button id="searchTitle">Search</button>
                 </form>
                 <div id="searchResult"></div>
             </div>
         </section>
 
-        <section id="#shelf">
+        <section id="shelf">
             <div id="boxNotFinishedYet">
                 <h2>Not Finished Yet</h2>
                 <div id="notFinishedYetList"></div>
@@ -85,7 +85,7 @@
 
             <div id="boxFinished">
                 <h2>Finished</h2>
-                <div id="FinishedList"></div>
+                <div id="finishedList"></div>
             </div>
         </section>
     </main>
@@ -95,5 +95,6 @@
     </footer>
 
     <script src="assets/js/menuMobile.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -1,125 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This website has the purpose of managing books">
-    <link rel="shortcut icon" href="assets//images/book.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/style/style.css">
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" crossorigin="anonymous">
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This website has the purpose of managing books"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets//images/book.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel = 'stylesheet'"
+      href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel = 'stylesheet'"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
     <title>Bookshelf App</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <!-- Nav Mobile -->
-        <nav class="menumobile">
-            <div aria-label="logo">Bookshelf</div>
-            <div class="iconmenu" id="menu"><a href="#" aria-label="hamburger button">☰</a></div>
-        </nav>
-        <nav id="drawer" class="navmobile">
-            <ul class="navlistmobile">
-                <li class="navitemmobile"><a href="#input">Input</a></li>
-                <li class="navitemmobile"><a href="#search">Search</a></li>
-                <li class="navitemmobile"><a href="#shelf">Shelf</a></li>
-            </ul>
-        </nav>
+      <!-- Nav Mobile -->
+      <nav class="menumobile">
+        <div aria-label="logo">Bookshelf</div>
+        <div class="iconmenu" id="menu">
+          <a href="#" aria-label="hamburger button">☰</a>
+        </div>
+      </nav>
+      <nav id="drawer" class="navmobile">
+        <ul class="navlistmobile">
+          <li class="navitemmobile"><a href="#input">Input</a></li>
+          <li class="navitemmobile"><a href="#search">Search</a></li>
+          <li class="navitemmobile"><a href="#shelf">Shelf</a></li>
+        </ul>
+      </nav>
 
-        <!-- Nav Desktop -->
-        <nav class="nav">
-            <a class="logo" href="">Bookshelf</a>
-            <ul class="navlist">
-                <li class="navitem"><a href="#record">Record</a></li>
-                <li class="navitem"><a href="#search">Search</a></li>
-                <li class="navitem"><a href="#shelf">Shelf</a></li>
-            </ul>
-        </nav>
+      <!-- Nav Desktop -->
+      <nav class="nav">
+        <a class="logo" href="">Bookshelf</a>
+        <ul class="navlist">
+          <li class="navitem"><a href="#record">Record</a></li>
+          <li class="navitem"><a href="#search">Search</a></li>
+          <li class="navitem"><a href="#shelf">Shelf</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section>
-            <div class="hero" style="background-image:linear-gradient(rgba(0, 2, 0, 0.651), rgba(3, 36, 1, 0.6)), url('assets/images/sbooksnet.jpg');">
-                <div class="herotext">
-                    <h1>Bookshelf Apps</h1>
-                    <h2>In a narrow world, there is the broad knowledge.</h2>
-                    <a href="#record" class="started">Get Started</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="record-section">
-            <div id="record" class="card">
-                <h2 class="text-center text-padding">Record Book</h2>
-                <form id="recordBook">
-                    <label for="title">Title</label>
-                    <input id="title" type="text" name="title" placeholder="Input book title here" required>
-                    <label for="author">Author</label>
-                    <input id="author" type="text" name="author" placeholder="Input book author here" required>
-                    <label for="year">Year</label>
-                    <input id="year" type="number" name="year" placeholder="Input book year here" required>
-                    <label for="isComplete">Finished Reading</label>
-                    <input id="isComplete" type="checkbox" name="isComplete">
-
-                    <button id="submit" type="submit" class="button-blue">Submit</button>
-                </form>
-            </div>
-
-            <div id="edit" class="card" hidden>
-                <h2 class="text-center text-padding">Edit Book</h2>
-                <form id="editBook">
-                    <input type="hidden" id="idBook" required>
-                    <label for="editTitle">Title</label>
-                    <input id="editTitle" type="text" name="editTitle" placeholder="Edit book title here" required>
-                    <label for="editAuthor">Author</label>
-                    <input id="editAuthor" type="text" name="editAuthor" placeholder="Edit book author here" required>
-                    <label for="editYear">Year</label>
-                    <input id="editYear" type="number" name="editYear" placeholder="Edit book year here" required>
-                    <label for="editIsComplete">Finished Reading</label>
-                    <input id="editIsComplete" type="checkbox" name="editIsComplete">
-
-                 
-                    <button id="cancelEdit" type="submit" class="button-yellow">Cancel</button>
-                    <button id="updateEdit" type="submit" class="button-blue">Update</button>
-                </form>
-            </div>
-
-            <div id="search" class="card">
-                <h2 class="text-center text-padding">Search</h2>
-                <form id="searchBook">
-                    <label for="searchByTitle">Title</label>
-                    <input id="searchByTitle" type="text" name="search" placeholder="Input book title here" required>
-                    <button id="searchTitle" class="button-blue">Search</button>
-                </form>
-                <div id="searchResult"></div>
-            </div>
-        </section>
-
-        <section id="shelf">
-            <div id="boxNotFinishedYet" class="card">
-                <h2 class="text-center text-padding">Not Finished Reading</h2>
-                <div id="notFinishedReadingList"></div>
-            </div>
-
-            <div id="boxFinished" class="card">
-                <h2 class="text-center text-padding">Finished Reading</h2>
-                <div id="finishedReadingList"></div>
-            </div>
-        </section>
-        <div class="modal" id="modalButton">
-            <div class="modal-content">
-                <p>Are you sure want to delete?</p>
-                <button class="validation">OK</button>
-                <button class="cancel">Cancel</button>
-            </div>
+      <section>
+        <div
+          class="hero"
+          style="
+            background-image: linear-gradient(
+                rgba(0, 2, 0, 0.651),
+                rgba(3, 36, 1, 0.6)
+              ),
+              url('assets/images/sbooksnet.jpg');
+          "
+        >
+          <div class="herotext">
+            <h1>Bookshelf Apps</h1>
+            <h2>In a narrow world, there is the broad knowledge.</h2>
+            <a href="#record" class="started">Get Started</a>
+          </div>
         </div>
+      </section>
+
+      <section class="record-section">
+        <div id="record" class="card">
+          <h2 class="text-center text-padding">Record Book</h2>
+          <form id="recordBook">
+            <label for="title">Title</label>
+            <input
+              id="title"
+              type="text"
+              name="title"
+              placeholder="Input book title here"
+              required
+            />
+            <label for="author">Author</label>
+            <input
+              id="author"
+              type="text"
+              name="author"
+              placeholder="Input book author here"
+              required
+            />
+            <label for="year">Year</label>
+            <input
+              id="year"
+              type="number"
+              name="year"
+              placeholder="Input book year here"
+              required
+            />
+            <label for="isComplete">Finished Reading</label>
+            <input id="isComplete" type="checkbox" name="isComplete" />
+
+            <button id="submit" type="submit" class="button-blue">
+              Submit
+            </button>
+          </form>
+        </div>
+
+        <div id="edit" class="card" hidden>
+          <h2 class="text-center text-padding">Edit Book</h2>
+          <form id="editBook">
+            <input type="hidden" id="idBook" required />
+            <label for="editTitle">Title</label>
+            <input
+              id="editTitle"
+              type="text"
+              name="editTitle"
+              placeholder="Edit book title here"
+              required
+            />
+            <label for="editAuthor">Author</label>
+            <input
+              id="editAuthor"
+              type="text"
+              name="editAuthor"
+              placeholder="Edit book author here"
+              required
+            />
+            <label for="editYear">Year</label>
+            <input
+              id="editYear"
+              type="number"
+              name="editYear"
+              placeholder="Edit book year here"
+              required
+            />
+            <label for="editIsComplete">Finished Reading</label>
+            <input id="editIsComplete" type="checkbox" name="editIsComplete" />
+
+            <button id="cancelEdit" type="submit" class="button-yellow">
+              Cancel
+            </button>
+            <button id="updateEdit" type="submit" class="button-blue">
+              Update
+            </button>
+          </form>
+        </div>
+
+        <div id="search" class="card">
+          <h2 class="text-center text-padding">Search</h2>
+          <form id="searchBook">
+            <label for="searchByTitle">Title</label>
+            <input
+              id="searchByTitle"
+              type="text"
+              name="search"
+              placeholder="Input book title here"
+              required
+            />
+            <button id="searchTitle" class="button-blue">Search</button>
+          </form>
+          <div id="searchResult"></div>
+        </div>
+      </section>
+
+      <section id="shelf">
+        <div id="boxNotFinishedYet" class="card">
+          <h2 class="text-center text-padding">Not Finished Reading</h2>
+          <div id="notFinishedReadingList"></div>
+        </div>
+
+        <div id="boxFinished" class="card">
+          <h2 class="text-center text-padding">Finished Reading</h2>
+          <div id="finishedReadingList"></div>
+        </div>
+      </section>
+      <div class="modal" id="modalButton">
+        <div class="modal-content">
+          <p>Are you sure want to delete?</p>
+          <button class="validation">OK</button>
+          <button class="cancel">Cancel</button>
+        </div>
+      </div>
     </main>
 
     <footer>
-        <p>Bookshelf App &copy; 2022</p>
+      <p>Bookshelf App &copy; 2022</p>
     </footer>
 
     <script src="assets/js/menuMobile.js"></script>
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>

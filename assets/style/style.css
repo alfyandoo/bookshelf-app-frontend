@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
   padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -31,7 +31,7 @@ body {
 }
 
 .menumobile {
-  background-color: #00cc00;
+  background-color: #008000;
   width: 100%;
   display: flex;
   font-weight: 600;
@@ -42,7 +42,7 @@ body {
 }
 
 .navmobile {
-  background-color: #00cc00;
+  background-color: #008000;
   width: 100%;
   display: flex;
   font-weight: 500;
@@ -86,7 +86,7 @@ body {
 }
 
 .nav {
-  background-color: #00cc00;
+  background-color: #008000;
   width: 100%;
   display: flex;
   font-weight: 600;
@@ -143,6 +143,7 @@ body {
 	align-items: center;
 	min-height: 380px;
 	width: 100%;
+  height: 100vh;
 	text-align: center;
 	background-position: center;
 }
@@ -155,16 +156,16 @@ body {
 .hero h1 {
 	color: #fff;
 	font-weight: 600;
-	font-size: 36px;
-	text-shadow: 1px 1px #00cc00;
+	font-size: 46px;
+	text-shadow: 1px 1px #008000;
 }
 
 .hero h2 {
 	color: #fff;
-	margin-top: 16px;
-	font-size: 18px;
+	margin: 20px 0;
+	font-size: 36px;
 	font-weight: 400;
-	text-shadow: 1px 1px #141414
+	text-shadow: 1px 1px #141414;
 }
 
 img {
@@ -188,14 +189,27 @@ main {
   text-decoration: none;
   padding: 5px 10px;
   font-size:1.3em;
-  font-weight: 600;
+  font-weight: 900;
   text-align: center;
-  color: #00cc00;
-  background-color: #f5f5f5;
+  color: white;
+  background-color: #008000;
 }
 
 .started:hover {
-  background-color: #232323;
+  color: black;
+  background-color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-padding {
+  padding: 0 0 40px 0;
+}
+
+.text-result {
+  padding: 40px 0 0 0;
 }
 
 form {
@@ -213,6 +227,74 @@ button {
   grid-column: 2 / 3;
 }
 
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.button-blue {
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.button-yellow {
+  background-color: yellow;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.finished-book {
+  background-color: green;
+  color: white;
+  width: 100%;
+  border: none;
+  padding: 4px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.not-finished-book {
+  background-color: #FFD700;
+  color: white;
+  width: 100%;
+  border: none;
+  padding: 4px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.edit-book {
+  background-color: blue;
+  color: white;
+  width: 100%;
+  border: none;
+  padding: 4px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.delete-book {
+  background-color: red;
+  color: white;
+  width: 100%;
+  border: none;
+  padding: 4px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
 .card {
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
@@ -222,15 +304,115 @@ button {
   position: relative;
 }
 
+
 .record-section {
-  padding: 20px;
-  justify-content: space-between;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
 }
 
-footer {
+.book_list {
+  text-align: center;
+  background-color: #D3D3D3;
+  border-radius: 10px;
+}
+
+#shelf {
+  margin: 40px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 40px;
+}
+
+#boxNotFinishedYet h2 {
+  color: #FFD700;
+}
+
+#boxFinished h2 {
+  color: green;
+}
+
+#notFinishedReadingList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#finishedReadingList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+article {
+  margin: 40px;
+  padding: 20px;
+}
+
+.action {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  padding: 0 auto;
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 1, 0.2);
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.modal p {
+  font-weight: 600;
+  font-size: 30px;
+  color: black;
+  padding: 10px;
+}
+
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  width: 30%;
+}
+
+.modal button {
+  border: 0;
+  padding: 5px;
+  margin: 0 0 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal .modal-content .validation {
+  margin: 10px;
+  font-size: 23px;
+  color: white;
+  background-color: green;
+  font-weight: 300;
+  border: 1px solid black;
+}
+
+.modal .modal-content .cancel {
+  margin: 10px;
+  font-size: 23px;
+  color: white;
+  background-color: red;
+  font-weight: 300;
+  border: 1px solid black;
+}
+
+footer p {
   bottom: 0;
+  text-align: center;
 }
 
 @media screen and (max-width: 499px) {
@@ -239,7 +421,7 @@ footer {
   }
 
   .navmobile {
-    background-color: #00cc00;
+    background-color: #008000;
     z-index: 10;
     width: 100%;
     position: absolute;
@@ -256,8 +438,32 @@ footer {
   .navitemmobile {
     display: list-item;
     text-align: left;
-    color: #00cc00;
+    color: #008000;
     width: 100%;
+  }
+
+  .record-section {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 30px;
+  }
+
+  article {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .book_list {
+    font-size: 12px;
+  }
+
+  #notFinishedYetList {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 30px;
+  }
+  
+  #finishedList {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 30px;
   }
 }
 

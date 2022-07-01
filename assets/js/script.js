@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const editForm = document.querySelector("#editBook");
-  console.log(editBook);
+
   editForm.addEventListener("submit", (e) => {
     e.preventDefault();
     editBook();
@@ -75,11 +75,8 @@ const addBook = () => {
 
 const editBook = () => {
   const idBook = parseInt(document.querySelector("#idBook").value);
-  console.log(`idBook: ${idBook}`);
+
   for (item of books) {
-    console.log(`item.id: ${item.id}`);
-    console.log(`idBook: ${idBook}`);
-    console.log(item.id === idBook);
     if (item.id === idBook) {
       item.title = document.querySelector("#editTitle").value;
       item.author = document.querySelector("#editAuthor").value;
@@ -114,10 +111,6 @@ const saveDataBooks = () => {
     document.dispatchEvent(new Event(SAVED_BOOK));
   }
 };
-
-document.addEventListener(SAVED_BOOK, function () {
-  console.log(localStorage.getItem(STORAGE_KEY));
-});
 
 const loadDataBooksFromStorage = () => {
   const listBook = localStorage.getItem(STORAGE_KEY);
@@ -278,7 +271,6 @@ const showFormEdit = (id) => {
 
 const addToFinishedReading = (id) => {
   const target = findId(id);
-  console.log(target);
   if (target == null) {
     return;
   }
@@ -338,7 +330,6 @@ const editBookDetail = (id) => {
   }
   for (const item of books) {
     if (item.id === id) {
-      console.log("tes");
       item.title = document.querySelector("#editTitle").value;
       item.author = document.querySelector("#editAuthor").value;
       item.year = document.querySelector("#editYear").value;
